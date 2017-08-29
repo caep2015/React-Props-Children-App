@@ -32,21 +32,20 @@ export default class ParentComponent extends Component {
     this.setState({whatToSay: ""});
 
   }
-  render() {
-    return (
-      <div className="jumbotron jumbotron-fluid">
-         <div className="container">
 
-           <p className="lead">Navbar</p>
-         </div>
-         <div>
-           <input className="form-control" onChange={this.handleInput} type='text' placeholder="Please enter message." value={this.state.whatToSay}/>
-         </div>
-         <div>
-           <ChildComponent onClick={this.handleSubmit} />
-           <DisplayComponent sayWhat={this.state.whatWasSaid} />
-         </div>
-     </div>
-   )
- }
+
+render () {
+    return (
+
+      <div className="jumbotron jumbotron-fluid">
+        <div>
+          <input className="form-control" onChange={this.handleInput} type='text' placeholder="Please enter message" value={this.state.whatToSay}/>
+        </div>
+        <div>
+          <ChildComponent onClick={this.handleSubmit} />
+          <DisplayComponent sayWhat={this.state.whatWasSaid} />
+        </div>
+      </div>
+    )
+  }
 }
